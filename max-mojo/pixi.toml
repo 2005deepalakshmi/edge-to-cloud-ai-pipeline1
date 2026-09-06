@@ -1,0 +1,11 @@
+[workspace]
+channels = ["conda-forge", "https://conda.modular.com/max-nightly"]
+name = "max-mojo"
+platforms = ["linux-64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+mojo = ">=1.1.0.dev2026090105,<2"
+max-all = ">=26.6.0.dev2026090105,<27"

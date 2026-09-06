@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ecrio-ai
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ecrio-ai
+  template:
+    metadata:
+      labels:
+        app: ecrio-ai
+    spec:
+      containers:
+        - name: ecrio-ai-inference
+          image: ecrio-ai-inference:latest
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: MQTT_BROKER_HOST
+              value: "192.168.49.1"
+            - name: MQTT_BROKER_PORT
+              value: "1883"
